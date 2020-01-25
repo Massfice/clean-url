@@ -1,0 +1,19 @@
+{
+    "name": "massfice/clean-url",
+    "description": "Class that handle clean urls, action, type, etc. To use this class, you have to properly configure .htaccess file. This is for my diploma project.",
+    "type": "libarary",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Massfice",
+            "email": "adrian.marian.tomasz.larysz@gmail.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Massfice\\CleanUrl\\": "src/"
+        }
+    }
+}
