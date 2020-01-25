@@ -10,13 +10,16 @@ class CleanUrl {
         $uri = $_SERVER["REQUEST_URI"];
         $script = $_SERVER["SCRIPT_NAME"]."/";
 
-        $clean = "";
+        $scripts = explode("/",$script);
+        $uris = explode("/",$uri);
 
-        for($i = 0; $i < strlen($uri); $i++) {
-            if(!isset($script[$i]) || $script[$i] != $uri[$i]) $clean = $clean.$uri[$i];
+        $cleans = [];
+
+        for($i = 0; $i < count($uris); $i++) {
+            if(!isset($scripts[$i]) || $uris[$i] != $scripts[$i]) {
+                $cleans[] = $uris[$i];
+            }
         }
-
-        $cleans = $clean == "" ? [] : explode("/",$clean);
 
         $this->cleans = $cleans;
 
